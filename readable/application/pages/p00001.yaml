@@ -1,0 +1,1015 @@
+---
+# ====== Page: Home ==========================================
+id: 1
+identification: 
+  name: Home
+  alias: HOME
+  title: Team 3
+
+appearance: 
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: true
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Arguments Must Have Checksum
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: Team 3 ======================================
+  id: 8857847665706744
+  identification: 
+    name: Team 3
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    slot: REGION_POSITION_01
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Cards Container
+    template-options: 
+    - '#DEFAULT#'
+    - t-CardsRegion--hideHeader js-addHiddenHeadingRoleDesc
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: Audit Summary Dashboard =====================
+  id: 13986816847280346
+  identification: 
+    name: Audit Summary Dashboard
+    title: Dashboard
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    slot: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Cards Container
+    template-options: 
+    - '#DEFAULT#'
+    - t-CardsRegion--hideHeader js-addHiddenHeadingRoleDesc
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: Total Budget ================================
+  id: 15393439659644016
+  identification: 
+    name: Total Budget
+    title: Total Budget
+    type: Cards
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select 'Total Budget' as card_title,
+            sum(TOTAL_BUDGET) as card_text,
+             'fa-money' as card_icon -- Example icon, choose a relevant one
+        from T3_DAILY_AUDIT
+      WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 10
+    parent-region: Audit Summary Dashboard # 13986816847280346
+    slot: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: 1
+    new-column: true
+    column-span: 3
+
+  appearance: 
+    template: Cards Container
+    template-options: 
+    - '#DEFAULT#'
+    - t-CardsRegion--hideHeader js-addHiddenHeadingRoleDesc
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 15393512093644017
+    appearance: 
+      layout: Horizontal (Row)
+
+    title: 
+      advanced-formatting: false
+      column: CARD_TITLE
+
+    subtitle: 
+      advanced-formatting: false
+
+    body: 
+      advanced-formatting: false
+      column: CARD_TEXT
+
+    secondary-body: 
+      advanced-formatting: false
+
+    icon-and-badge: 
+      icon-source: Icon Class Column
+      icon-column: CARD_ICON
+      icon-css-classes: fa-money-bag
+      icon-position: Start
+
+    media: 
+      advanced-formatting: false
+      source: No Media
+
+    performance: 
+      lazy-loading: false
+
+    pagination: 
+      type: Scroll
+      show-total-count: false
+
+- # ====== Region: Remaining  ==================================
+  id: 15393674943644018
+  identification: 
+    name: 'Remaining '
+    title: 'Remaining '
+    type: Cards
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select 'Remaining' as card_title,
+            sum (REMAINING_BUDGET) as card_text,
+             'fa-balance-scale' as card_icon
+        from T3_DAILY_AUDIT
+        WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 20
+    parent-region: Audit Summary Dashboard # 13986816847280346
+    slot: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: 3
+
+  appearance: 
+    template: Cards Container
+    template-options: 
+    - '#DEFAULT#'
+    - t-CardsRegion--hideHeader js-addHiddenHeadingRoleDesc
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 15393950967644021
+    appearance: 
+      layout: Horizontal (Row)
+
+    title: 
+      advanced-formatting: false
+      column: CARD_TITLE
+
+    subtitle: 
+      advanced-formatting: false
+
+    body: 
+      advanced-formatting: false
+      column: CARD_TEXT
+
+    secondary-body: 
+      advanced-formatting: false
+
+    icon-and-badge: 
+      icon-source: Icon Class Column
+      icon-column: CARD_ICON
+      icon-css-classes: fa-hourglass-2
+      icon-position: Start
+
+    media: 
+      advanced-formatting: false
+      source: No Media
+
+    performance: 
+      lazy-loading: false
+
+    pagination: 
+      type: Scroll
+      show-total-count: false
+
+- # ====== Region: Total Expense ===============================
+  id: 15393773815644019
+  identification: 
+    name: Total Expense
+    type: Cards
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select 'Total Expense' as card_title,
+             sum(TOTAL_EXPENSE) as card_text,
+             'fa-credit-card' as card_icon
+        from T3_DAILY_AUDIT
+        WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 30
+    parent-region: Audit Summary Dashboard # 13986816847280346
+    slot: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: 3
+
+  appearance: 
+    template: Cards Container
+    template-options: 
+    - '#DEFAULT#'
+    - t-CardsRegion--hideHeader js-addHiddenHeadingRoleDesc
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 15394042829644022
+    appearance: 
+      layout: Horizontal (Row)
+
+    title: 
+      advanced-formatting: false
+      column: CARD_TITLE
+
+    subtitle: 
+      advanced-formatting: false
+
+    body: 
+      advanced-formatting: false
+      column: CARD_TEXT
+
+    secondary-body: 
+      advanced-formatting: false
+
+    icon-and-badge: 
+      icon-source: Icon Class Column
+      icon-column: CARD_ICON
+      icon-css-classes: fa-badge-dollar
+      icon-position: Start
+
+    media: 
+      advanced-formatting: false
+      source: No Media
+
+    performance: 
+      lazy-loading: false
+
+    pagination: 
+      type: Scroll
+      show-total-count: false
+
+- # ====== Region: Extra Deduction =============================
+  id: 15393835967644020
+  identification: 
+    name: Extra Deduction
+    type: Cards
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select 'Extra Deduction' as card_title,
+             sum(EXTRA_DEDUCTION) as card_text,
+             'fa-minus-circle' as card_icon
+        from T3_DAILY_AUDIT
+        WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 40
+    parent-region: Audit Summary Dashboard # 13986816847280346
+    slot: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: 3
+
+  appearance: 
+    template: Cards Container
+    template-options: 
+    - '#DEFAULT#'
+    - t-CardsRegion--hideHeader js-addHiddenHeadingRoleDesc
+    icon: fa-coins
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 15394174827644023
+    appearance: 
+      layout: Horizontal (Row)
+
+    title: 
+      advanced-formatting: false
+      column: CARD_TITLE
+
+    subtitle: 
+      advanced-formatting: false
+
+    body: 
+      advanced-formatting: false
+      column: CARD_TEXT
+
+    secondary-body: 
+      advanced-formatting: false
+
+    icon-and-badge: 
+      icon-source: Icon Class Column
+      icon-column: CARD_ICON
+      icon-css-classes: fa-coins
+      icon-position: Start
+
+    media: 
+      advanced-formatting: false
+      source: No Media
+
+    performance: 
+      lazy-loading: false
+
+    pagination: 
+      type: Scroll
+      show-total-count: false
+
+- # ====== Region: Purchase Summary ============================
+  id: 15394774698644029
+  identification: 
+    name: Purchase Summary
+    type: Chart
+
+  source: 
+    location: None
+
+  layout: 
+    sequence: 20
+    parent-region: No Parent
+    slot: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 15394897548644030
+    chart: 
+      type: Bar
+
+    appearance: 
+      orientation: Vertical
+      stack: false
+
+    layout: 
+      height: 400
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: true
+
+    multi-series-chart-data: 
+      fill-gaps-in-chart-data: true
+      sort-order: Label - Ascending
+      render-gap-as-zero: true
+
+    settings: 
+      time-axis-type: Automatic
+      zoom-and-scroll: No
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-group-name: true
+      show-value: true
+
+    legend: 
+      show: false
+
+    series: 
+    - # ====== Series: Purchase Summary ============================
+      id: 15394906007644031
+      identification: 
+        name: Purchase Summary
+
+      execution: 
+        sequence: 10
+
+      source: 
+        location: Local Database
+        type: SQL Query
+        sql-query: |
+          SELECT
+              TO_CHAR(PURCHASE_DATE, 'DD-Mon-YYYY') AS FORMATTED_PURCHASE_DATE, 
+              TOTAL_PRODUCTS_COST AS PRODUCT_COST_PER_DAY -- Assuming Product Cost Per Day is now just the total cost
+          FROM
+              T3_PURCHASE_SUMMARY 
+          ORDER BY
+              PURCHASE_DATE ASC
+
+      order-by: 
+        type: None
+
+      column-mapping: 
+        label: FORMATTED_PURCHASE_DATE
+        value: PRODUCT_COST_PER_DAY
+
+      appearance: 
+        assigned-to-y2-axis: false
+
+      link: 
+        type: Redirect to Page in this Application
+        target: 
+          url: 'f?p=&APP_ID.:87:&SESSION.::&DEBUG.:::'
+          page: 87 # Purchase Summary
+
+      label: 
+        show: false
+
+    axes: 
+    - # ====== Axis: x =============================================
+      id: 15395053657644032
+      identification: 
+        name: x
+        show-axis: true
+        title: Purchase Date
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+        rotation: true
+        position: Outside
+
+    - # ====== Axis: y =============================================
+      id: 15395137499644033
+      identification: 
+        name: y
+        show-axis: true
+        title: Product Cost Per day
+
+      value: 
+        format: Decimal
+        decimal-places: 0
+        format-scaling: None
+        baseline-scaling: Zero
+        scale: Linear
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+
+- # ====== Region: Meal Track ==================================
+  id: 15395896108644040
+  identification: 
+    name: Meal Track
+    title: Meal Track
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      SELECT
+          to_char(MEAL_DATE, 'DD Mon YYYY') As formatedDate,
+          TOTAL_MEALS as Total_Meals_Taken
+      FROM
+          T3_DAILY_MEAL_SUMMARY
+      ORDER BY
+          MEAL_DATE ASC
+      
+         
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 40
+    parent-region: No Parent
+    slot: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 15395929272644041
+    chart: 
+      type: Line with Area
+
+    appearance: 
+      orientation: Vertical
+      stack: true
+
+    layout: 
+      height: 400
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: true
+
+    multi-series-chart-data: 
+      fill-gaps-in-chart-data: true
+      sort-order: Label - Ascending
+      render-gap-as-zero: true
+
+    settings: 
+      time-axis-type: Automatic
+      zoom-and-scroll: No
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-group-name: true
+      show-value: true
+
+    legend: 
+      show: false
+
+    series: 
+    - # ====== Series: Meal Track ==================================
+      id: 15396003155644042
+      identification: 
+        name: Meal Track
+
+      execution: 
+        sequence: 10
+
+      source: 
+        location: Local Database
+        type: SQL Query
+        sql-query: |
+          SELECT
+              to_char(MEAL_DATE, 'DD-Mon-YYYY') As Meal_Date,
+              TOTAL_MEALS as Total_Meals_Taken
+          FROM
+              T3_DAILY_MEAL_SUMMARY
+          ORDER BY
+              MEAL_DATE ASC
+          
+             
+
+      order-by: 
+        type: None
+
+      column-mapping: 
+        label: MEAL_DATE
+        value: TOTAL_MEALS_TAKEN
+
+      appearance: 
+        color: '#063e1b'
+        assigned-to-y2-axis: false
+
+      link: 
+        type: Redirect to Page in this Application
+        target: 
+          url: 'f?p=&APP_ID.:8:&SESSION.::&DEBUG.:::'
+          page: 8 # Daily Meal Summary Report
+
+      line: 
+        style: Solid
+        type: Automatic
+
+      marker: 
+        show: Automatic
+        shape: Automatic
+
+      label: 
+        show: false
+
+    axes: 
+    - # ====== Axis: x =============================================
+      id: 15396367769644045
+      identification: 
+        name: x
+        show-axis: true
+        title: Meal Date
+
+      title: 
+        font-color: '#1c4d33'
+
+      value: 
+        format: Date - Short
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      major-ticks: 
+        show: Automatic
+
+      minor-ticks: 
+        show: true
+
+      tick-label: 
+        show: true
+        rotation: true
+        position: Outside
+
+    - # ====== Axis: y =============================================
+      id: 15396484920644046
+      identification: 
+        name: y
+        show-axis: true
+        title: Meals Taken Perday
+
+      value: 
+        format: Decimal
+        decimal-places: 0
+        format-scaling: None
+        baseline-scaling: Zero
+        scale: Linear
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: true
+
+      tick-label: 
+        show: true
+
+    - # ====== Axis: y2 ============================================
+      id: 15396548964644047
+      identification: 
+        name: y2
+        show-axis: false
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+
+      dual-y-axes: 
+        show: Automatic
+
+- # ====== Region: Financial Overview ==========================
+  id: 15396649158644048
+  identification: 
+    name: Financial Overview
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      SELECT
+          label,
+          value
+      FROM
+      (
+          SELECT
+              'Total Budget' AS label,
+              TOTAL_BUDGET AS value
+          FROM T3_DAILY_AUDIT
+          WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT) -- Gets the latest audit entry
+          UNION ALL
+          SELECT
+              'Remaining Budget' AS label,
+              REMAINING_BUDGET AS value
+          FROM T3_DAILY_AUDIT
+          WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+          UNION ALL
+          SELECT
+              'Total Expense' AS label,
+              TOTAL_EXPENSE AS value
+          FROM T3_DAILY_AUDIT
+          WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+          UNION ALL
+          SELECT
+              'Extra Deduction' AS label,
+              EXTRA_DEDUCTION AS value
+          FROM T3_DAILY_AUDIT
+          WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+      )
+      WHERE value IS NOT NULL AND value > 0 -- Optional: exclude zero/null values from slices
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 50
+    parent-region: No Parent
+    slot: BODY
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 15396717996644049
+    chart: 
+      type: Donut
+
+    title: 
+      title: Transaction Overview
+
+    layout: 
+      height: 400
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: true
+
+    settings: 
+      pie-selection-effect: Highlight
+
+    value: 
+      pie-chart-other-threshold: 0
+      format: Decimal
+      decimal-places: 0
+      format-scaling: None
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-value: true
+
+    legend: 
+      show: false
+
+    series: 
+    - # ====== Series: Financial Overview ==========================
+      id: 15396807548644050
+      identification: 
+        name: Financial Overview
+
+      execution: 
+        sequence: 10
+
+      source: 
+        location: Local Database
+        type: SQL Query
+        sql-query: |
+          SELECT
+              label,
+              value
+          FROM
+          (
+              SELECT
+                  'Total Budget' AS label,
+                  TOTAL_BUDGET AS value
+              FROM T3_DAILY_AUDIT
+              WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT) -- Gets the latest audit entry
+              UNION ALL
+              SELECT
+                  'Remaining Budget' AS label,
+                  REMAINING_BUDGET AS value
+              FROM T3_DAILY_AUDIT
+              WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+              UNION ALL
+              SELECT
+                  'Total Expense' AS label,
+                  TOTAL_EXPENSE AS value
+              FROM T3_DAILY_AUDIT
+              WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+              UNION ALL
+              SELECT
+                  'Extra Deduction' AS label,
+                  EXTRA_DEDUCTION AS value
+              FROM T3_DAILY_AUDIT
+              WHERE AUDIT_DATE = (SELECT MAX(AUDIT_DATE) FROM T3_DAILY_AUDIT)
+          )
+          WHERE value IS NOT NULL AND value > 0 -- Optional: exclude zero/null values from slices
+
+      order-by: 
+        type: None
+
+      column-mapping: 
+        label: LABEL
+        value: VALUE
+
+      label: 
+        show: true
+        position: Outside Slice
+        display-as: Label - Percentage
+

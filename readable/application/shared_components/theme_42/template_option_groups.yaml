@@ -1,0 +1,13 @@
+---
+- # ====== Template Option Group: Required Indicator ===========
+  id: 11502184486453019
+  identification: 
+    template-type: Item
+    name: Required Indicator
+    identifier: REQUIRED_INDICATOR
+    sequence: 1
+
+  settings: 
+    null-text: Default
+    advanced: false
+

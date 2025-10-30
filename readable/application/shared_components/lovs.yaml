@@ -1,0 +1,144 @@
+---
+- # ====== List of Values: EMPLOYEE_DETAILS_T3.EMPLOYEE_NAME ===
+  id: 9571341371849802
+  identification: 
+    name: EMPLOYEE_DETAILS_T3.EMPLOYEE_NAME
+
+  subscription: 
+    version-number: 18194230
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: EMPLOYEE_DETAILS_T3
+
+  column-mapping: 
+    return: EMP_CODE
+    display: EMPLOYEE_NAME
+    default-sort: EMPLOYEE_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: MEAL_MANAGER_T3.MEAL_MANAGER_CODE ===
+  id: 9647321473000547
+  identification: 
+    name: MEAL_MANAGER_T3.MEAL_MANAGER_CODE
+
+  subscription: 
+    version-number: 18203341
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: MEAL_MANAGER_T3
+
+  column-mapping: 
+    return: MEAL_MANAGER_CODE
+    default-sort: MEAL_MANAGER_CODE
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: T3_PRODUCTS.PRODUCT_NAME ============
+  id: 13688506426377956
+  identification: 
+    name: T3_PRODUCTS.PRODUCT_NAME
+
+  subscription: 
+    version-number: 20684370
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: T3_PRODUCTS
+
+  column-mapping: 
+    return: PRODUCT_ID
+    display: PRODUCT_NAME
+    default-sort: PRODUCT_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: T3_PRODUCTS.PRODUCT_NAME1 ===========
+  id: 13699303104400414
+  identification: 
+    name: T3_PRODUCTS.PRODUCT_NAME1
+
+  subscription: 
+    version-number: 20688802
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: T3_PRODUCTS
+
+  column-mapping: 
+    return: PRODUCT_ID
+    display: PRODUCT_NAME
+    default-sort: PRODUCT_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: UOM_CODE ============================
+  id: 13699928696400415
+  identification: 
+    name: UOM_CODE
+
+  subscription: 
+    version-number: 20688802
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      SELECT uom_code AS display_value,
+             uom_id AS return_value
+      FROM t3_uom
+      ORDER BY 1
+
+  column-mapping: 
+    return: RETURN_VALUE
+    display: DISPLAY_VALUE
+    default-sort: Use Order By from Query
+
+- # ====== List of Values: T3_PRODUCTS.PRODUCT_NAME2 ===========
+  id: 13734450253945942
+  identification: 
+    name: T3_PRODUCTS.PRODUCT_NAME2
+
+  subscription: 
+    version-number: 20723415
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: T3_PRODUCTS
+
+  column-mapping: 
+    return: PRODUCT_ID
+    display: PRODUCT_NAME
+    default-sort: PRODUCT_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: UOM_CODE1 ===========================
+  id: 13735159566945946
+  identification: 
+    name: UOM_CODE1
+
+  subscription: 
+    version-number: 20723417
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      SELECT uom_code AS display_value,
+             uom_id AS return_value
+      FROM t3_uom
+      ORDER BY 1
+
+  column-mapping: 
+    return: RETURN_VALUE
+    display: DISPLAY_VALUE
+    default-sort: Use Order By from Query
+

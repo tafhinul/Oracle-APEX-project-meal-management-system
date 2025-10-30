@@ -1,0 +1,257 @@
+---
+- # ====== Breadcrumb: Breadcrumb ==============================
+  id: 8844752761706655
+  identification: 
+    name: Breadcrumb
+
+  entries: 
+  - # ====== Entry: Home =========================================
+    id: 8844948450706655
+    identification: 
+      name: Home
+      page-number: 1
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+        page: 1 # Home
+
+  - # ====== Entry: Daily Meal Summary Report ====================
+    id: 10119226338940296
+    identification: 
+      name: Daily Meal Summary Report
+      page-number: 8
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:8:&APP_SESSION.::&DEBUG.:::'
+        page: 8 # Daily Meal Summary Report
+
+  - # ====== Entry: Daily Meal Summary Form ======================
+    id: 10120450944940301
+    identification: 
+      name: Daily Meal Summary Form
+      page-number: 9
+
+    execution: 
+      sequence: 10
+
+    appearance: 
+      parent-entry: Daily Meal Summary Report # 10119226338940296
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:9:&APP_SESSION.::&DEBUG.:::'
+        page: 9 # Daily Meal Summary Form
+
+  - # ====== Entry: employee details report ======================
+    id: 10534055480331892
+    identification: 
+      name: employee details report
+      page-number: 18
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:18:&APP_SESSION.::&DEBUG.:::'
+        page: 18 # employee details report
+
+  - # ====== Entry: Employee Attendance Report ===================
+    id: 11692952427073047
+    identification: 
+      name: Employee Attendance Report
+      page-number: 14
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:14:&APP_SESSION.::&DEBUG.:::'
+        page: 14 # Employee Attendance Report
+
+  - # ====== Entry: Employee Attendance Form =====================
+    id: 11694110829073049
+    identification: 
+      name: Employee Attendance Form
+      page-number: 15
+
+    execution: 
+      sequence: 10
+
+    appearance: 
+      parent-entry: Employee Attendance Report # 11692952427073047
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:15:&APP_SESSION.::&DEBUG.:::'
+        page: 15 # Daily Attendance Form
+
+  - # ====== Entry: Meal Audit ===================================
+    id: 11716122222113067
+    identification: 
+      name: Meal Audit
+      page-number: 39
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:39:&SESSION.::&DEBUG.:::'
+        page: 39 # Meal Audit Report
+
+  - # ====== Entry: Monthly budget report ========================
+    id: 11850284322755071
+    identification: 
+      name: Monthly budget report
+      page-number: 41
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:41:&APP_SESSION.::&DEBUG.:::'
+        page: 41 # Monthly budget report
+
+  - # ====== Entry: Meal Manager Report ==========================
+    id: 12850231170080372
+    identification: 
+      name: Meal Manager Report
+      page-number: 49
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:49:&APP_SESSION.::&DEBUG.:::'
+        page: 49 # Meal Manager Report
+
+  - # ====== Entry: All Products =================================
+    id: 15203944679240127
+    identification: 
+      name: All Products
+      page-number: 84
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:84:&SESSION.::&DEBUG.:::'
+        page: 84 # All products
+
+  - # ====== Entry: Product Expense ==============================
+    id: 15204802207247508
+    identification: 
+      name: Product Expense
+      page-number: 86
+
+    execution: 
+      sequence: 10
+
+    appearance: 
+      parent-entry: All Products # 15203944679240127
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:86:&SESSION.::&DEBUG.:::'
+        page: 86 # Product Expense Report
+
+  - # ====== Entry: Purchase Summary =============================
+    id: 15205519693255782
+    identification: 
+      name: Purchase Summary
+      page-number: 87
+
+    execution: 
+      sequence: 10
+
+    appearance: 
+      parent-entry: All Products # 15203944679240127
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:87:&SESSION.::&DEBUG.:::'
+        page: 87 # Purchase Summary
+
+  - # ====== Entry: Menu Summary =================================
+    id: 15247329955554774
+    identification: 
+      name: Menu Summary
+      page-number: 89
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:89:&SESSION.::&DEBUG.:::'
+        page: 89 # Menu Summary
+
+  - # ====== Entry: Menu Items Entry =============================
+    id: 15248455209565157
+    identification: 
+      name: Menu Items Entry
+      page-number: 88
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:88:&SESSION.::&DEBUG.:::'
+        page: 88 # Menu Items Entry
+
+  - # ====== Entry: Employee meal Summary ========================
+    id: 15250353461579569
+    identification: 
+      name: Employee meal Summary
+      page-number: 187
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:187:&SESSION.::&DEBUG.:::'
+        page: 187 # Employee Meal Summary
+
+  - # ====== Entry: Guest Attend =================================
+    id: 15252991561601502
+    identification: 
+      name: Guest Attend
+      page-number: 26
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:26:&SESSION.::&DEBUG.:::'
+        page: 26 # Guest attend
+
+  - # ====== Entry: Daily Attendance =============================
+    id: 15257122351630035
+    identification: 
+      name: Daily Attendance
+      page-number: 2
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:2:&SESSION.::&DEBUG.:::'
+        page: 2 # daily attendance
+

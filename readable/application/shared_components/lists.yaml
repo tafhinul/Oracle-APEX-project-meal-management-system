@@ -1,0 +1,473 @@
+---
+- # ====== List: Navigation Menu ===============================
+  id: 8845205580706657
+  identification: 
+    name: Navigation Menu
+
+  subscription: 
+    version-number: 52194234
+
+  source: 
+    type: Static Values
+
+  entries: 
+  - # ====== Entry: Home =========================================
+    id: 8856967327706741
+    label: 
+      label: Home
+
+    icon: 
+      image/icon-css-classes: fa-home
+
+    layout: 
+      sequence: 10
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+        page: 1 # Home
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Employee Attendance Report ===================
+    id: 11687413480073037
+    label: 
+      label: Employee Attendance Report
+
+    icon: 
+      image/icon-css-classes: fa-users-alt
+
+    layout: 
+      sequence: 70
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 14
+      - 15
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:14:&SESSION.::&DEBUG.::::'
+        page: 14 # Employee Attendance Report
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Guest attend =================================
+    id: 12631734044022100
+    label: 
+      label: Guest attend
+
+    icon: 
+      image/icon-css-classes: fa-fighter-jet
+
+    layout: 
+      sequence: 100
+      parent-entry: Employee Attendance Report # 11687413480073037
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 26
+      - 27
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:26:&APP_SESSION.::&DEBUG.:::'
+        page: 26 # Guest attend
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: daily attendance =============================
+    id: 13191925336647756
+    label: 
+      label: daily attendance
+
+    icon: 
+      image/icon-css-classes: fa-calendar-check-o
+
+    layout: 
+      sequence: 110
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 2
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
+        page: 2 # daily attendance
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: UOM Information ==============================
+    id: 13471471816536620
+    label: 
+      label: UOM Information
+
+    icon: 
+      image/icon-css-classes: fa-layout-grid-3x
+
+    layout: 
+      sequence: 120
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 82
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:82:&SESSION.::&DEBUG.::::'
+        page: 82 # UOM INFORMATION
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: All Products =================================
+    id: 13666916273272884
+    label: 
+      label: All Products
+
+    icon: 
+      image/icon-css-classes: fa-cart-full
+
+    layout: 
+      sequence: 130
+      parent-entry: Product Expense # 13693045744400332
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 84
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:84:&SESSION.::&DEBUG.::::'
+        page: 84 # All products
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Product Expense ==============================
+    id: 13693045744400332
+    label: 
+      label: Product Expense
+
+    icon: 
+      image/icon-css-classes: fa-cash-register
+
+    layout: 
+      sequence: 140
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 86
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:86:&SESSION.::&DEBUG.::::'
+        page: 86 # Product Expense Report
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Daily Meal Summary ===========================
+    id: 13702611328447870
+    label: 
+      label: Daily Meal Summary
+
+    icon: 
+      image/icon-css-classes: fa-clipboard-list
+
+    layout: 
+      sequence: 160
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:8:&SESSION.::&DEBUG.::::'
+        page: 8 # Daily Meal Summary Report
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Daily  Audit =================================
+    id: 13703273100459680
+    label: 
+      label: Daily  Audit
+
+    icon: 
+      image/icon-css-classes: 'fa-clipboard-chart '
+
+    layout: 
+      sequence: 170
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:39:&SESSION.::&DEBUG.::::'
+        page: 39 # Meal Audit Report
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Meal Manager =================================
+    id: 13703645689467861
+    label: 
+      label: Meal Manager
+
+    icon: 
+      image/icon-css-classes: fa-user-circle-o
+
+    layout: 
+      sequence: 180
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:49:&SESSION.::&DEBUG.::::'
+        page: 49 # Meal Manager Report
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Monthly Budget ===============================
+    id: 13704092993476133
+    label: 
+      label: Monthly Budget
+
+    icon: 
+      image/icon-css-classes: fa-calculator
+
+    layout: 
+      sequence: 190
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:41:&SESSION.::&DEBUG.::::'
+        page: 41 # Monthly budget report
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Purchase Summary =============================
+    id: 13722612480945875
+    label: 
+      label: Purchase Summary
+
+    icon: 
+      image/icon-css-classes: fa-cart-magnifying-glass
+
+    layout: 
+      sequence: 200
+      parent-entry: Product Expense # 13693045744400332
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 87
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:87:&SESSION.::&DEBUG.::::'
+        page: 87 # Purchase Summary
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Menu Summary =================================
+    id: 13787684406014459
+    label: 
+      label: Menu Summary
+
+    icon: 
+      image/icon-css-classes: fa-cutlery
+
+    layout: 
+      sequence: 210
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 89
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:89:&SESSION.::&DEBUG.::::'
+        page: 89 # Menu Summary
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Employee Meal Summary ========================
+    id: 14797392211137449
+    label: 
+      label: Employee Meal Summary
+
+    icon: 
+      image/icon-css-classes: fa-calendar-o
+
+    layout: 
+      sequence: 240
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 187
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:187:&APP_SESSION.::&DEBUG.:::'
+        page: 187 # Employee Meal Summary
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+- # ====== List: Navigation Bar ================================
+  id: 8846371637706679
+  identification: 
+    name: Navigation Bar
+
+  subscription: 
+    version-number: 17394444
+
+  source: 
+    type: Static Values
+
+  entries: 
+  - # ====== Entry: &APP_USER. ===================================
+    id: 8858421844706756
+    label: 
+      label: '&APP_USER.'
+
+    icon: 
+      image/icon-css-classes: fa-user
+
+    layout: 
+      sequence: 10
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: '#'
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+      2.: has-username
+
+  - # ====== Entry: --- ==========================================
+    id: 8858989078706756
+    label: 
+      label: '---'
+
+    layout: 
+      sequence: 20
+      parent-entry: '&APP_USER.' # 8858421844706756
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: separator
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    server-side-condition: 
+      type: User is Authenticated (not public)
+
+  - # ====== Entry: Sign Out =====================================
+    id: 8859386205706757
+    label: 
+      label: Sign Out
+
+    icon: 
+      image/icon-css-classes: fa-sign-out
+
+    layout: 
+      sequence: 30
+      parent-entry: '&APP_USER.' # 8858421844706756
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: '&LOGOUT_URL.'
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    server-side-condition: 
+      type: User is Authenticated (not public)
+
