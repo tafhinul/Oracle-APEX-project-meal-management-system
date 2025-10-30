@@ -17,3 +17,5 @@ This is an **Oracle APEX**-based Meal Management System designed to manage daily
 ## 🧑‍💻 Developer
 **Author:** Tafhinul  
 **GitHub:** [tafhinul](https://github.com/tafhinul)
+<img width="870" height="825" alt="image" src="https://github.com/user-attachments/assets/21e6b7fe-1432-4688-bac4-c2cb4c047fe9" />
+
